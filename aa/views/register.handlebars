@@ -1,0 +1,73 @@
+<div id="warpper" class="clearfix">
+    <div class="content">
+        <div id="right-bar" class="clearfix">
+            <div class="sep20"></div>
+            <div class="box">
+                <div class="header clearfix">V2EX = way to explore
+                    <span class="fade">V2EX是一个关于分享和探索的地方</span>
+                </div>
+                <div class="cell" style="text-align: center">
+                    <div class="inner">
+                        <div class="center">
+                            <a href="/signup" class="super normal button">现在注册</a>
+                            <p>已注册用户请 <a href="/signin">登录</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+            <div class="sep20"></div>
+            <div class="box">
+                <div class="header">
+                    <a href="#">V2EX</a>
+                    <span class="chevron">&nbsp;>&nbsp;</span>
+                    注册
+                    <span class="fa fa-clock"></span>
+                </div>
+                <div class="cell">
+                    <form action="/user/register" method="post">
+                        <table cellpadding="5" cellspacing="0" border="0" width="100%">
+                            <tbody>
+                            <tr>
+                                <td width="120" align="right">用户名</td>
+                                <td width="auto" align="left">
+                                    <input type="text" class="user" name="email" id="email">
+                                    <span class="fade" style="width: 100%">请使用半角的 a-z 或数字 0-9</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="120" align="right">密码</td>
+                                <td width="auto" align="left">
+                                    <input type="password" class="user" name="password" id="password">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="120" align="right">电子邮件</td>
+                                <td width="auto" align="left">
+                                    <input type="emil" class="user" name="email" id="email">
+                                    <span class="fade">请使用真实电子邮箱注册,我们不会将你的邮箱地址分享给任何人</span>
+                                </td>
+                            </tr>
+                            <!--<tr>-->
+                                <!--<td width="120" align="right">你是机器人吗?</td>-->
+                                <!--<td width="auto" align="left">-->
+                                    <!--<input type="text" class="user" name="check" id="check" placeholder="请输入上图中的验证码">-->
+                                    <!--&lt;!&ndash;<span class="fade">请使用真实电子邮箱注册,我们不会将你的邮箱地址分享给任何人</span>&ndash;&gt;-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <tr>
+                                <td width="120" align="right"></td>
+                                <td width="auto" align="left">
+                                    <input type="submit" value="注册" id="loginBtn" class="normal super button">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/components/jquery/dist/jquery.min.js"></script>

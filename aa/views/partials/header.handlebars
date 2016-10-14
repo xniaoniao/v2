@@ -1,0 +1,32 @@
+<header>
+    <div id="head-container">
+        <a href="javascript:;" id="logo">
+            <img src="/images/logo.png" alt="" id="logo-icon" class="clearfix">
+        </a>
+        <div id="search">
+            <div id="search-container">
+                <from methond="" action="">
+                    <input type="text">
+                </from>
+            </div>
+        </div>
+        {{#if user}}
+            <div id="login" class="clearfix">
+                <a href="javascript:;" id="index">首页</a>
+                <a href="#">{{user.loginname}}</a>
+                <a href="#" id="register">工作空间</a>
+                <a href="#" id="register">时间轴</a>
+                <a href="/logout" id="login">登出</a>
+                <a href="/signin" id="login">记事本</a>
+
+            </div>
+            {{else}}
+              <div id="login" class="clearfix">
+                <a href="javascript:;" id="index">首页</a>
+                <a href="/user/register" id="register">注册</a>
+                <a href="/signin" id="login">登录</a>
+              </div>
+        {{/if}}
+
+    </div>
+</header>
