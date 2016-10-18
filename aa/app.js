@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
+const loginParser = require('./common/loginChecker').loginParser;
 var app = express();
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(loginParser);
 
 // register routes
 (function () {
@@ -24,11 +26,13 @@ app.use(express.static(path.join(__dirname, 'public')));
     var index = require('./routes/index');
     var user = require('./routes/user');
     var comments = require('./routes/comments');
+    var topic = require('./routes/topic');
 
     app.use('/', index);
     app.use('/api', api);
     app.use('/user', user);
     app.use('/comments', comments);
+    app.use('/topic', topic);
 })();
 
 

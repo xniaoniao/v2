@@ -6,16 +6,10 @@ const LoginUsers = require('../common/loginUsers');
 /* GET home page. */
 router.get('/', function (req, res, next) {
     // todo  parse user id
-    var cookie = req.cookies || {};
-    var userId = cookie.account;
 
-    if (userId) {
-        User.getUserByLoginName(userId, function (err, user) {
-            res.render('index', {title: 'Express', 'user': user[0]});
-        })
-    } else {
-        res.render('index', {title: 'Express'});
-    }
+    // res.render('index', {'title': 'express', 'user': res.locals.user});
+    res.render('index', {'title': 'express'});
+
 });
 
 router.get('/index', function (req, res) {
@@ -41,7 +35,7 @@ router.post('/signin', function (req, res) {
         if (user[0].password != password) {
             return res.redirect("/signin");
         }
-        // console.log(user[0]);
+
         LoginUsers.generateCookie(res, user[0]);
         res.redirect('/');
     })

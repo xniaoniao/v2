@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const User = require('../services/user');
+const loginRequire = require('../common/loginChecker').loginRequire;
+
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -36,7 +38,7 @@ router.post('/register', function (req, res, next) {
     })
 });
 
-router.get('/balance', function(req, res, next) {
+router.get('/balance', loginRequire, function(req, res, next) {
    res.render("balance")
 });
 

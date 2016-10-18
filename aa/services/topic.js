@@ -12,13 +12,13 @@ function newTopic(title, content, creatorId, tabId, pin, callback) {
     topic.creatorId = utils.makeObjectId(creatorId);
     topic.tab = tabId;
     topic.created_at = topic.last_modified = topic.last_touched = new Date().getTime();
-    topic.pin = pin;
+    // topic.pin = pin;
 
     topic.save(callback);
 }
 
 function getTopic(topicId, callback) {
-    Topic.fing({_id: topicId})
+    Topic.find({_id: topicId})
         .populate('creatorId')
         .populate('tab')
 }

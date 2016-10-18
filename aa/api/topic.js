@@ -67,7 +67,7 @@ router.get('/topic:/topic:id', function (req, res, next) {
         })
 });
 
-router.get('/topic', function() {
+router.get('/topic', function(req, res, next) {
     var title = req.body.title;
     var createId = req.body.createId;
     var content = req.body.content;
